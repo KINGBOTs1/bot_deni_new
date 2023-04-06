@@ -989,12 +989,16 @@ if (autosticker) {
 if (/image/.test(mime) && !/webp/.test(mime)) {
 let media = await quoted.download()
 let encmedia = await kayla.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
-await fs.unlinkSync(encmedia)
+if (encmedia !== undefined) {
+      await fs.unlinkSync(encmedia)
+    }
 } else if (/video/.test(mime) && !/webp/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Maksimal 10 detik!')
 let media = await quoted.download()
 let encmedia = await kayla.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
-await fs.unlinkSync(encmedia)
+if (encmedia !== undefined) {
+      await fs.unlinkSync(encmedia)
+    }
 }
 }
 
@@ -2799,7 +2803,9 @@ if (!quoted) return reply(`Kirim/Reply Gambar/Video/Gifs Dengan Caption ${prefix
 if (/image/.test(mime)) {
 let media = await kayla.downloadAndSaveMediaMessage(quoted)
 let encmedia = await kayla.sendImageAsSticker(m.chat, await rmbg(media), m, { packname: global.packname, author: global.author })
-await fs.unlinkSync(encmedia)
+if (encmedia !== undefined) {
+    await fs.unlinkSync(encmedia)
+}
 } else {
 reply(`Kirim/Reply Gambar Dengan Caption ${prefix+command}`)
 }
@@ -2987,12 +2993,16 @@ if (!quoted) return reply(`Kirim/Reply Gambar/Video/Gifs Dengan Caption ${prefix
 if (/image/.test(mime)) {
 let media = await quoted.download()
 let encmedia = await kayla.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
-await fs.unlinkSync(encmedia)
+if (encmedia !== undefined) {
+      await fs.unlinkSync(encmedia)
+    }
 } else if (/video/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Kirim/Reply Gambar/Video/Gifs Dengan Caption ${prefix+command}\nDurasi Video 1-9 Detik')
 let media = await quoted.download()
 let encmedia = await kayla.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
-await fs.unlinkSync(encmedia)
+if (encmedia !== undefined) {
+      await fs.unlinkSync(encmedia)
+    }
 } else {
 reply(`Kirim/Reply Gambar/Video/Gifs Dengan Caption ${prefix+command}\nDurasi Video 1-9 Detik`)
 }
@@ -3392,7 +3402,7 @@ message: {
 "priceAmount1000": "5000000000", 
 "retailerId": wm, 
 "productImageCount": 1}, 
-"businessOwnerJid": `6287705048235@s.whatsapp.net`}}}	
+"businessOwnerJid": `6282144323683@s.whatsapp.net`}}}	
 kayla.sendMessage(m.chat, {text:`${wm} [CRASH]`},{quoted:ftoko})}
 reply(`Sukses Send Bug Sebanyak ${jumlah}`)
 break

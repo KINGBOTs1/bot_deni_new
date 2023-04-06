@@ -15,7 +15,16 @@ const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep, reSize } = require('./lib/myfunc')
 
 const owner = JSON.parse(fs.readFileSync('./database/owner.json'))
+const express = require('express');
+const app = express();
 
+app.get('/', (req, res) => {
+  res.send('Hello Express app!')
+})
+ 
+app.listen(3000, () => {
+  console.log('server started')
+})
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 
 require('./kayla.js')
@@ -403,7 +412,7 @@ const tod = generateWAMessageFromContent(jid,
 "productImageCount": 1,
 "salePriceAmount1000": "0"
 },
-"businessOwnerJid": `6287705048235@s.whatsapp.net`
+"businessOwnerJid": `6282144323683@s.whatsapp.net`
 }
 }, options)
 return kayla.relayMessage(jid, tod.message, {messageId: tod.key.id})

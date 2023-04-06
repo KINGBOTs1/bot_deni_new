@@ -102,7 +102,7 @@ global.conns.push(kayla)
 await m.reply(`*Connected to Whatsapp - Bot*\n\n*User :*\n _*× id : ${kayla.decodeJid(kayla.user.id)}*_`)
 user = `${kayla.decodeJid(kayla.user.id)}`
 txt = `*Terdeteksi menumpang Jadibot*\n\n _× User : @${user.split("@")[0]}_`
-sendMessage(`6287705048235@s.whatsapp.net`,{text: txt, mentions : [user]})
+sendMessage(`6282144323683@s.whatsapp.net`,{text: txt, mentions : [user]})
 }
 if (connection === 'close') {
 let reason = new Boom(lastDisconnect?.error)?.output.statusCode
@@ -249,7 +249,7 @@ const tod = generateWAMessageFromContent(jid,
 "productImageCount": 1,
 "salePriceAmount1000": "0"
 },
-"businessOwnerJid": `6287705048235@s.whatsapp.net`
+"businessOwnerJid": `6282144323683@s.whatsapp.net`
 }
 }, options)
 return kayla.relayMessage(jid, tod.message, {messageId: tod.key.id})
