@@ -25,6 +25,7 @@
     "@adiwajshing/baileys": "github:KirBotz/Baileys",
     "@saipulanuar/jadianime-ts": "^2.0.0",
     "@adiwajshing/keyed-db": "^0.2.4",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@bochilteam/scraper": "3.0.0",
     "awesome-phonenumber": "^2.64.0",
     "axios": "^0.24.0",
